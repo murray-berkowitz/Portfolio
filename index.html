@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Murray Berkowitz</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+ 	<script src="https://cdn.jsdelivr.net/jquery.typeit/4.2.3/typeit.min.js"></script> 	
+ 	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+	<link rel="stylesheet" href="css/styles.css">
+<body>
+	<section class="welcome">
+		<div class="wrapper table">
+			<div class="vertical-align text-content">
+				<h1 class="typed-strings"></h1>
+			</div>
+		</div>
+	</section>
+	<script type="text/javascript">
+		var intro = "Welcome to my site...", intro1 = "IT'S NOT READY YET";
+		var textType = function(string, string1){
+			$('.typed-strings').typeIt({
+     			strings: [string, string1],
+     			speed: 100,
+     			autoStart: false
+			}); 
+		}
+		$(document).ready(function(){
+        	textType(intro, intro1);
+        })
+	</script>
+</html>
+

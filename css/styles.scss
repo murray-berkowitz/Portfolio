@@ -1,0 +1,67 @@
+body {
+   font-family: 'Press Start 2P', cursive;
+	padding:0;
+	margin:0;
+}
+
+.col {
+	margin-left: 1%;
+}
+
+@for $i from 2 through 11 {
+	.span#{$i} {
+		$x : 12/$i;
+		width: ((100-$x+1)/$x)*1%;
+	}
+}
+
+.span12 {
+	width:100%;
+}
+.table {
+	display:table;
+}
+.vertical-align {
+	vertical-align:middle;
+	text-align:center;
+	display:table-cell;
+}
+section.welcome {
+	background-color: black;
+	width:100vw;
+	height:100vh;
+	.wrapper {
+		width:900px;
+		margin:0 auto;
+		height:100%;
+	}
+	
+	.text-content h1 {
+		color:#ffffff;
+		line-height: 2em;
+	}
+}
+
+.typed-cursor{
+    opacity: 1;
+    color:white;
+    display: inline-block;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}

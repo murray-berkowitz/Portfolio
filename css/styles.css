@@ -1,0 +1,92 @@
+body {
+  font-family: 'Press Start 2P', cursive;
+  padding: 0;
+  margin: 0; }
+
+.col {
+  margin-left: 1%; }
+
+.span2 {
+  width: 15.83333%; }
+
+.span3 {
+  width: 24.25%; }
+
+.span4 {
+  width: 32.66667%; }
+
+.span5 {
+  width: 41.08333%; }
+
+.span6 {
+  width: 49.5%; }
+
+.span7 {
+  width: 57.91667%; }
+
+.span8 {
+  width: 66.33333%; }
+
+.span9 {
+  width: 74.75%; }
+
+.span10 {
+  width: 83.16667%; }
+
+.span11 {
+  width: 91.58333%; }
+
+.span12 {
+  width: 100%; }
+
+.table {
+  display: table; }
+
+.vertical-align {
+  vertical-align: middle;
+  text-align: center;
+  display: table-cell; }
+
+section.welcome {
+  background-color: black;
+  width: 100vw;
+  height: 100vh; }
+  section.welcome .wrapper {
+    width: 900px;
+    margin: 0 auto;
+    height: 100%; }
+  section.welcome .text-content h1 {
+    color: #ffffff;
+    line-height: 2em; }
+
+.typed-cursor {
+  opacity: 1;
+  color: white;
+  display: inline-block;
+  -webkit-animation: blink 0.7s infinite;
+  -moz-animation: blink 0.7s infinite;
+  animation: blink 0.7s infinite; }
+
+@keyframes blink {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-moz-keyframes blink {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+/*# sourceMappingURL=styles.css.map */
