@@ -9,9 +9,9 @@
 	<link rel="stylesheet" href="css/styles.css">
 <body>
 	<section class="welcome">	
-		<h1 id="title">MURRAY'S MAGNIFICENT PORTFOLIO</h1>
-		<div class="wrapper table">
-			<div class="vertical-align text-content">
+		<div class="wrapper">
+			<div class="text-content center">
+				<h1 id="title">MURRAY'S MAGNIFICENT PORTFOLIO</h1>
 				<h1 class="typed-strings"></h1>
 			</div>
 		</div>
@@ -33,7 +33,18 @@
 		</div>
 	</section>
 	<script type="text/javascript">
-		var intro = "Welcome to my site...", intro1 = "IT'S NOT READY YET";
+		var intro = {
+			opening1: "Welcome to my site...",
+			opening2: "I'm not really sure why you're here but...",
+		}
+		var menu = {
+			header: "<span class='menuHeader'>Select an option from the menu:</span>",
+			about: "<span class='selected about'>About</span>",
+			skills: "<span class='skills'>Skills</span>",
+			portfolio: "<span class='portfolio'>Portfolio</span>",
+			stats: "<span class='stats'>Stats</span>",
+			easter: "<span class='easter'>Easter Eggs</span>"
+		}
 		function getRandomColor() {
     		var letters = '0123456789ABCDEF';
     		var color = '#';
@@ -42,25 +53,124 @@
     		}
     		return color;
 		}
-		var textType = function(string, string1){
+		var menuType = function(){
+			var arr = [];
+			for(var i = 0; i < arguments.length; i++){
+				arr.push(arguments[i]);
+			}
+			$('.typed-strings').html = "";
 			$('.typed-strings').typeIt({
-     			strings: [string, string1],
+				strings: arr,
+				speed: 50,
+				autoStart: false,
+				cursor: false
+			});
+			$(".menuHeader").css("color", getRandomColor());
+		}
+		var textType = function(){
+			var arr = [];
+			for(var i = 0; i < arguments.length; i++){
+				arr.push(arguments[i]);
+			}
+			$('.typed-strings').typeIt({
+     			strings: arr,
      			speed: 100,
-     			autoStart: false
+     			startDelay: 500,
+     			autoStart: false,
+     			callback: function(){
+     				menuType(menu.header, menu.about, menu.skills, menu.portfolio, menu.stats, menu.easter)
+				}
 			}); 
 		}
-		function randomizeString() {
-			var h1 = $('#title'); 
-			var chars = h1.text().split('');
-			h1.html('');     
+		function randomizeString(id) {
+			var id = $('#'+id); 
+			var chars = id.text().split('');
+			id.html('');     
 			for(var i=0; i<chars.length; i++) {
 			    var span = $('<span>' + chars[i] + '</span>').css("color", getRandomColor());
-			    h1.append(span);
+			    id.append(span);
 			}
 		};
 		$(document).ready(function(){
-        	textType(intro, intro1);
-        	randomizeString();
+        	textType(intro.opening1, intro.opening2);
+        	randomizeString("title");
+        	document.onkeydown = menuNav;
+
+			function menuNav(e) {
+
+			    e = e || window.event;
+
+			    if (e.keyCode == '38') {
+			        if($('.about').hasClass('selected')){
+	       				$('.about').removeClass('selected');
+	       				$('.about').css("color", 'white');
+	       				$('.easter').addClass('selected');
+	       				$('.easter').css("color", getRandomColor());
+	       			}
+	       			else if($('.skills').hasClass('selected')){
+	       				$('.skills').removeClass('selected');
+	       				$('.skills').css("color", 'white');
+	       				$('.about').addClass('selected');
+	       				$('.about').css("color", getRandomColor());
+	       			}
+	       			else if($('.portfolio').hasClass('selected')){
+	       				$(".portfolio").removeClass('selected');
+	       				$('.portfolio').css("color", 'white');
+	       				$('.skills').addClass('selected');
+	       				$('.skills').css("color", getRandomColor());
+	       			}
+	       			else if($('.stats').hasClass('selected')){
+	       				$('.stats').removeClass('selected');
+	       				$('.stats').css("color", 'white');
+	       				$('.portfolio').addClass('selected');
+	       				$('.portfolio').css("color", getRandomColor());
+	       			}
+	       			else if($('.easter').hasClass('selected')){
+	       				$('.easter').removeClass('selected');
+	       				$('.easter').css("color", 'white');
+	       				$('.stats').addClass('selected');
+	       				$('.stats').css("color", getRandomColor());
+	       			}
+			    }
+			    else if (e.keyCode == '40') {
+			        if($('.about').hasClass('selected')){
+	       				$('.about').removeClass('selected');
+	       				$('.about').css("color", 'white');
+	       				$('.skills').addClass('selected');
+	       				$('.skills').css("color", getRandomColor());
+	       			}
+	       			else if($('.skills').hasClass('selected')){
+	       				$('.skills').removeClass('selected');
+	       				$('.skills').css("color", 'white');
+	       				$('.portfolio').addClass('selected');
+	       				$('.portfolio').css("color", getRandomColor());
+	       			}
+	       			else if($('.portfolio').hasClass('selected')){
+	       				$(".portfolio").removeClass('selected');
+	       				$('.portfolio').css("color", 'white');
+	       				$('.stats').addClass('selected');
+	       				$('.stats').css("color", getRandomColor());
+	       			}
+	       			else if($('.stats').hasClass('selected')){
+	       				$('.stats').removeClass('selected');
+	       				$('.stats').css("color", 'white');
+	       				$('.easter').addClass('selected');
+	       				$('.easter').css("color", getRandomColor());
+	       			}
+	       			else if($('.easter').hasClass('selected')){
+	       				$('.easter').removeClass('selected');
+	       				$('.easter').css("color", 'white');
+	       				$('.about').addClass('selected');
+	       				$('.about').css("color", getRandomColor());
+	       			}
+			    }
+			    else if (e.keyCode == '32'){
+			    	tiSettings({speed:750});
+			    	console.log("pressed!");
+			    }
+
+			}
+
         })
 	</script>
 </html>

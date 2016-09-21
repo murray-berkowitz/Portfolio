@@ -42,6 +42,15 @@ body {
 .center {
   text-align: center; }
 
+.selected {
+  background-color: white;
+  color: black;
+  padding: 5px; }
+
+.menuHeader {
+  font-size: 28px;
+  margin-bottom: 14px; }
+
 .span12 {
   width: 100%; }
 
@@ -57,21 +66,27 @@ section.welcome {
   background-color: black;
   width: 100vw;
   height: 100vh; }
+@keyframes fadeIn {
+  from {
+    opacity: .75; } }
   section.welcome .wrapper {
     max-width: 1000px;
     margin: 0 auto;
     height: 100%; }
   section.welcome #title {
-    position: absolute;
-    max-width: 1000px;
-    top: 75px;
-    left: 450px;
+    position: relative;
+    top: 35px;
     display: inline-block;
     text-align: center;
+    margin-bottom: 45px;
+    animation: fadeIn 1s infinite alternate;
     font-size: 48px; }
-  section.welcome .text-content h1 {
+  section.welcome h1 {
     color: #ffffff;
-    line-height: 2em; }
+    line-height: 1.5em; }
+  section.welcome .text-content .typed-strings {
+    position: relative;
+    top: 55px; }
 
 section.footer {
   position: fixed;
