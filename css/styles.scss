@@ -41,27 +41,33 @@ section.welcome {
 		line-height: 2em;
 	}
 }
+section.footer{	
+	position:fixed;
+	bottom:25px;
+	left:0;
+	width:100%;
+	h4, h6 {
+		display:inline-block;
+		float:left;
+		color:white;
+		padding-top:53px;
+		margin: 0 20px;
 
-.typed-cursor{
-    opacity: 1;
-    color:white;
-    display: inline-block;
-    -webkit-animation: blink 0.7s infinite;
-    -moz-animation: blink 0.7s infinite;
-    animation: blink 0.7s infinite;
-}
-@keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
-}
-@-webkit-keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
-}
-@-moz-keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
+	}
+	.wrapper {
+		width:1400px;
+		margin:0 auto;
+	}
+	.arrow, .enter {
+		float:left;
+		height:auto;
+	}
+	.enter {
+		max-width: 105px;
+		padding-top:35px;
+	}
+	.arrow {
+		max-width:35px;
+		padding-top:25px;
+	}
 }
