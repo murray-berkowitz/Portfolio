@@ -49,7 +49,7 @@
      			autoStart: false
 			}); 
 		}
-		$(function randomizeString() {
+		function randomizeString() {
 			var h1 = $('#title'); 
 			var chars = h1.text().split('');
 			h1.html('');     
@@ -57,9 +57,10 @@
 			    var span = $('<span>' + chars[i] + '</span>').css("color", getRandomColor());
 			    h1.append(span);
 			}
-		});
+		};
 		$(document).ready(function(){
         	textType(intro, intro1);
+        	randomizeString();
         })
 	</script>
 </html>
