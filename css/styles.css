@@ -36,6 +36,12 @@ body {
 .span11 {
   width: 91.58333%; }
 
+.auto {
+  margin: 0 auto; }
+
+.center {
+  text-align: center; }
+
 .span12 {
   width: 100%; }
 
@@ -52,9 +58,17 @@ section.welcome {
   width: 100vw;
   height: 100vh; }
   section.welcome .wrapper {
-    width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     height: 100%; }
+  section.welcome #title {
+    position: absolute;
+    max-width: 1000px;
+    top: 75px;
+    left: 450px;
+    display: inline-block;
+    text-align: center;
+    font-size: 48px; }
   section.welcome .text-content h1 {
     color: #ffffff;
     line-height: 2em; }
@@ -73,14 +87,22 @@ section.footer {
   section.footer .wrapper {
     width: 1400px;
     margin: 0 auto; }
-  section.footer .arrow, section.footer .enter {
-    float: left;
-    height: auto; }
-  section.footer .enter {
-    max-width: 105px;
-    padding-top: 35px; }
-  section.footer .arrow {
-    max-width: 35px;
-    padding-top: 25px; }
+  section.footer .controls {
+    float: left; }
+    section.footer .controls .arrow, section.footer .controls .enter {
+      float: left;
+      height: auto; }
+    section.footer .controls .enter {
+      max-width: 105px;
+      padding-top: 35px; }
+    section.footer .controls .arrow {
+      max-width: 35px;
+      padding-top: 25px; }
+  section.footer .social {
+    float: right; }
+    section.footer .social a {
+      text-decoration: none; }
+    section.footer .social img {
+      margin-top: 50px; }
 
 /*# sourceMappingURL=styles.css.map */

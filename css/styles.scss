@@ -14,7 +14,12 @@ body {
 		width: ((100-$x+1)/$x)*1%;
 	}
 }
-
+.auto {
+	margin:0 auto;
+}
+.center {
+	text-align:center;
+}
 .span12 {
 	width:100%;
 }
@@ -31,11 +36,19 @@ section.welcome {
 	width:100vw;
 	height:100vh;
 	.wrapper {
-		width:900px;
+		max-width:1000px;
 		margin:0 auto;
 		height:100%;
 	}
-	
+	#title {
+		position:absolute;
+		max-width:1000px;
+		top:75px;
+		left:450px;
+		display: inline-block;
+		text-align:center;
+		font-size:48px;
+	}
 	.text-content h1 {
 		color:#ffffff;
 		line-height: 2em;
@@ -58,16 +71,28 @@ section.footer{
 		width:1400px;
 		margin:0 auto;
 	}
-	.arrow, .enter {
+	.controls{	
 		float:left;
-		height:auto;
+		.arrow, .enter {
+			float:left;
+			height:auto;
+		}
+		.enter {
+			max-width: 105px;
+			padding-top:35px;
+		}
+		.arrow {
+			max-width:35px;
+			padding-top:25px;
+		}
 	}
-	.enter {
-		max-width: 105px;
-		padding-top:35px;
-	}
-	.arrow {
-		max-width:35px;
-		padding-top:25px;
+	.social {
+		float:right;
+		a {
+			text-decoration: none;
+		}
+		img {
+			margin-top:50px;
+		}
 	}
 }

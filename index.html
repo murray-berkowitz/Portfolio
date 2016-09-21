@@ -8,7 +8,8 @@
  	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 	<link rel="stylesheet" href="css/styles.css">
 <body>
-	<section class="welcome">
+	<section class="welcome">	
+		<h1 id="title">MURRAY'S MAGNIFICENT PORTFOLIO</h1>
 		<div class="wrapper table">
 			<div class="vertical-align text-content">
 				<h1 class="typed-strings"></h1>
@@ -24,10 +25,23 @@
 				<img class="enter"src="img/enter.png" alt="">
 				<h6>Select Option</h6>
 			</div>
+			<div class="social">
+				<a href="mailto:murray.berkowitz93@gmail.com"><img src="img/google.png" alt=""></a>
+				<a href="https://www.linkedin.com/in/murray-berkowitz-244338102" target="_blank"><img src="img/linkedin.png" alt=""></a>
+				<a href="https://www.twitter.com/TheRealMoB21" target="_blank"><img src="img/twitter.png" alt=""></a>
+			</div>
 		</div>
 	</section>
 	<script type="text/javascript">
 		var intro = "Welcome to my site...", intro1 = "IT'S NOT READY YET";
+		function getRandomColor() {
+    		var letters = '0123456789ABCDEF';
+    		var color = '#';
+    		for (var i = 0; i < 6; i++ ) {
+        		color += letters[Math.floor(Math.random() * 16)];
+    		}
+    		return color;
+		}
 		var textType = function(string, string1){
 			$('.typed-strings').typeIt({
      			strings: [string, string1],
@@ -35,6 +49,15 @@
      			autoStart: false
 			}); 
 		}
+		$(function randomizeString() {
+			var h1 = $('#title'); 
+			var chars = h1.text().split('');
+			h1.html('');     
+			for(var i=0; i<chars.length; i++) {
+			    var span = $('<span>' + chars[i] + '</span>').css("color", getRandomColor());
+			    h1.append(span);
+			}
+		});
 		$(document).ready(function(){
         	textType(intro, intro1);
         })
