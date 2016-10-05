@@ -35,7 +35,8 @@
 	<script type="text/javascript">
 		var intro = {
 			opening1: "Welcome to my site...",
-			opening2: "I'm not really sure why you're here but...",
+			opening2: "It's not ready yet!",
+			opening3: "Please contact me below :D"
 		}
 		var menu = {
 			header: "<span class='menuHeader'>Select an option from the menu:</span>",
@@ -76,10 +77,11 @@
      			strings: arr,
      			speed: 100,
      			startDelay: 500,
-     			autoStart: false,
-     			callback: function(){
+     			autoStart: false
+     			/*callback: function(){
      				menuType(menu.header, menu.about, menu.skills, menu.portfolio, menu.stats, menu.easter)
 				}
+			*/
 			}); 
 		}
 		function randomizeString(id) {
@@ -92,7 +94,7 @@
 			}
 		};
 		$(document).ready(function(){
-        	textType(intro.opening1, intro.opening2);
+        	textType(intro.opening1, intro.opening2, intro.opening3);
         	randomizeString("title");
         	document.onkeydown = menuNav;
 
